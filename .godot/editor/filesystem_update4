@@ -1,0 +1,12 @@
+res://Assets/HBoxContainer.gd
+res://MainMenu.tscn
+res://Calculator.gd
+res://Calculator.tres
+res://MainMenu.gd
+res://grade.tscn
+res://gradeLetter.tscn
+res://Assets/Semester_1.tscn
+res://Calculator.tscn
+res://Assets/Class.tscn
+res://autoloads/MusicController.tscn
+res://Assets/Semester_1.gd

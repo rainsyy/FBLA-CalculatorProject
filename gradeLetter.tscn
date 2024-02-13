@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://0okrfsitn32k"]
+
+[ext_resource type="Theme" uid="uid://homyfjxyl8r2" path="res://Calculator.tres" id="1_7c2tu"]
+[ext_resource type="FontFile" uid="uid://doi4hghhxubdv" path="res://Assets/ThaleahFat.ttf" id="2_snlt3"]
+
+[node name="Grade" type="OptionButton"]
+size_flags_horizontal = 3
+theme = ExtResource("1_7c2tu")
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_fonts/font = ExtResource("2_snlt3")
+theme_override_font_sizes/font_size = 80
+alignment = 1
+item_count = 13
+selected = 0
+popup/item_0/text = "Grade"
+popup/item_0/id = 0
+popup/item_1/text = "A+"
+popup/item_1/id = 1
+popup/item_2/text = "A"
+popup/item_2/id = 2
+popup/item_3/text = "A-"
+popup/item_3/id = 3
+popup/item_4/text = "B+"
+popup/item_4/id = 4
+popup/item_5/text = "B"
+popup/item_5/id = 5
+popup/item_6/text = "B-"
+popup/item_6/id = 6
+popup/item_7/text = "C+"
+popup/item_7/id = 7
+popup/item_8/text = "C"
+popup/item_8/id = 8
+popup/item_9/text = "C-"
+popup/item_9/id = 9
+popup/item_10/text = "F+"
+popup/item_10/id = 10
+popup/item_11/text = "F"
+popup/item_11/id = 11
+popup/item_12/text = "F-"
+popup/item_12/id = 12

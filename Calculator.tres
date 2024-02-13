@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://homyfjxyl8r2"]
+
+[ext_resource type="Texture2D" uid="uid://px3ilgtl1j1u" path="res://Assets/ForwardButton.png" id="1_01v7g"]
+[ext_resource type="Texture2D" uid="uid://dsgldqjmj8nlg" path="res://Assets/BackwardButton.png" id="2_pjujh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm1pw"]
+bg_color = Color(0.207843, 0.309804, 0.321569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubkwu"]
+bg_color = Color(0.321569, 0.47451, 0.435294, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_f2tx5"]
+color = Color(0.207843, 0.309804, 0.321569, 1)
+thickness = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxlsv"]
+bg_color = Color(0.517647, 0.662745, 0.54902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fd20w"]
+bg_color = Color(0.321569, 0.47451, 0.435294, 1)
+
+[resource]
+LineEdit/colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+LineEdit/font_sizes/font_size = 80
+PopupMenu/colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+PopupMenu/colors/font_separator_color = Color(0.207843, 0.309804, 0.321569, 1)
+PopupMenu/font_sizes/font_separator_size = 20
+PopupMenu/font_sizes/font_size = 30
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_tm1pw")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_ubkwu")
+PopupMenu/styles/separator = SubResource("StyleBoxLine_f2tx5")
+TabContainer/colors/font_selected_color = Color(0.792157, 0.823529, 0.772549, 1)
+TabContainer/icons/decrement = ExtResource("1_01v7g")
+TabContainer/icons/decrement_highlight = ExtResource("1_01v7g")
+TabContainer/icons/increment = ExtResource("2_pjujh")
+TabContainer/icons/increment_highlight = ExtResource("2_pjujh")
+TabContainer/styles/panel = null
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_dxlsv")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_fd20w")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://4qctf8nqlhrm"]
+
+[ext_resource type="Script" path="res://autoloads/MusicController.gd" id="1_gfh37"]
+[ext_resource type="AudioStream" uid="uid://df8aa5baiufqg" path="res://ludumdare38.ogg" id="2_xdsjv"]
+
+[node name="MusicController" type="Node"]
+script = ExtResource("1_gfh37")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xdsjv")
+volume_db = -8.0

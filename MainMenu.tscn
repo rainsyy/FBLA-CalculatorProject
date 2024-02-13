@@ -1,0 +1,185 @@
+[gd_scene load_steps=13 format=3 uid="uid://cdat2e1kn88mw"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_d15cw"]
+[ext_resource type="FontFile" uid="uid://doi4hghhxubdv" path="res://Assets/ThaleahFat.ttf" id="3_aetmj"]
+[ext_resource type="AudioStream" uid="uid://cyiwlwyr8f42y" path="res://Sounds/menuClickAlt.wav" id="4_iob8y"]
+[ext_resource type="Script" path="res://ParallaxBackground.gd" id="4_ylpew"]
+[ext_resource type="Texture2D" uid="uid://cfsk7glo2eko" path="res://Parallax/FBLACalcParallaxBackground.png" id="5_rlsgt"]
+[ext_resource type="Texture2D" uid="uid://cga1ku8qrqhvn" path="res://Parallax/FBLACalcParallaxThirdLayer.png" id="6_c1u36"]
+[ext_resource type="Texture2D" uid="uid://3t828gtt1qt3" path="res://Parallax/FBLACalcParallaxSecondLayer.png" id="7_ahrwy"]
+[ext_resource type="Texture2D" uid="uid://q8rrb2bkipou" path="res://Parallax/FBLACalcParallaxFrontLayer.png" id="8_74k41"]
+
+[sub_resource type="Theme" id="Theme_p2g2k"]
+default_font = ExtResource("3_aetmj")
+default_font_size = 75
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7q0f"]
+bg_color = Color(0.321569, 0.47451, 0.435294, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.207843, 0.309804, 0.321569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nohq2"]
+bg_color = Color(0.207843, 0.309804, 0.321569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sy1wo"]
+bg_color = Color(0.184314, 0.207843, 0.27451, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d15cw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GpaTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 29
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_aetmj")
+theme_override_font_sizes/font_size = 400
+text = "GPA
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Aligner" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_top = -120
+
+[node name="CalculatorTitle" type="Label" parent="MarginContainer/VBoxContainer/Aligner"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("3_aetmj")
+theme_override_font_sizes/font_size = 150
+text = "Calculator"
+horizontal_alignment = 1
+
+[node name="ForHoco" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -75
+
+[node name="CalculatorTitle2" type="Label" parent="MarginContainer/VBoxContainer/ForHoco"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("3_aetmj")
+theme_override_font_sizes/font_size = 35
+text = "FOR HOUSTON COUNTY HIGHSCHOOL
+
+"
+horizontal_alignment = 1
+
+[node name="ForHoco2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -110
+
+[node name="CalculatorTitle2" type="Label" parent="MarginContainer/VBoxContainer/ForHoco2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("3_aetmj")
+theme_override_font_sizes/font_size = 30
+text = "by hieu tran and sneha singh
+
+"
+horizontal_alignment = 1
+
+[node name="Seperator6" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartAligner" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_p2g2k")
+theme_override_constants/margin_left = 700
+theme_override_constants/margin_right = 700
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/StartAligner"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7q0f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nohq2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sy1wo")
+text = "Start"
+
+[node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator3" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MenuSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_iob8y")
+
+[node name="ParallaxBackground" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ParallaxBackground"]
+offset = Vector2(1605, 510)
+transform = Transform2D(1, 0, 0, 1, 1605, 510)
+follow_viewport_enabled = true
+script = ExtResource("4_ylpew")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground/ParallaxBackground"]
+motion_mirroring = Vector2(3210, 1020)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("5_rlsgt")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground/ParallaxBackground"]
+motion_mirroring = Vector2(3210, 1020)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("6_c1u36")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground/ParallaxBackground"]
+motion_mirroring = Vector2(3210, 1020)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("7_ahrwy")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground/ParallaxBackground"]
+motion_mirroring = Vector2(3210, 1020)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("8_74k41")
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer/StartAligner/StartButton" to="." method="_on_start_button_button_up"]

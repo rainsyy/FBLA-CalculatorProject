@@ -1,0 +1,444 @@
+[gd_scene load_steps=17 format=3 uid="uid://bas70b5o2mvjf"]
+
+[ext_resource type="Script" path="res://Assets/Semester_1.gd" id="1_6s6u3"]
+[ext_resource type="FontFile" uid="uid://doi4hghhxubdv" path="res://Assets/ThaleahFat.ttf" id="1_tbln0"]
+[ext_resource type="AudioStream" uid="uid://hw8hwfo8gve5" path="res://Sounds/KeyboardSound.wav" id="2_mj8sr"]
+[ext_resource type="Theme" uid="uid://homyfjxyl8r2" path="res://Calculator.tres" id="2_ocxx3"]
+[ext_resource type="PackedScene" uid="uid://0okrfsitn32k" path="res://gradeLetter.tscn" id="4_q5hry"]
+[ext_resource type="AudioStream" uid="uid://bvis4vnismx7s" path="res://Sounds/blipSelect.wav" id="6_ljjvm"]
+
+[sub_resource type="Gradient" id="Gradient_i36ib"]
+colors = PackedColorArray(0.207843, 0.309804, 0.321569, 1, 0.207843, 0.309804, 0.321569, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7rsu8"]
+gradient = SubResource("Gradient_i36ib")
+
+[sub_resource type="Gradient" id="Gradient_xha50"]
+colors = PackedColorArray(0.321569, 0.47451, 0.435294, 1, 0.321569, 0.47451, 0.435294, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d5c62"]
+gradient = SubResource("Gradient_xha50")
+
+[sub_resource type="Image" id="Image_44ums"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_06nwe"]
+image = SubResource("Image_44ums")
+
+[sub_resource type="Image" id="Image_qgrx5"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_ppmga"]
+image = SubResource("Image_qgrx5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkm3w"]
+content_margin_left = 10.0
+content_margin_top = 28.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.25, 0.25, 0.25, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 8.0
+expand_margin_top = 32.0
+expand_margin_right = 8.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="Theme" id="Theme_urnqw"]
+Panel/styles/panel = null
+Window/colors/title_color = Color(0.875, 0.875, 0.875, 1)
+Window/colors/title_outline_modulate = Color(1, 1, 1, 1)
+Window/constants/close_h_offset = 18
+Window/constants/close_v_offset = 24
+Window/constants/resize_margin = 4
+Window/constants/title_height = 36
+Window/constants/title_outline_size = 0
+Window/font_sizes/title_font_size = 16
+Window/fonts/title_font = ExtResource("1_tbln0")
+Window/icons/close = SubResource("ImageTexture_06nwe")
+Window/icons/close_pressed = SubResource("ImageTexture_ppmga")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_fkm3w")
+
+[node name="Semester 1" type="VBoxContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_6s6u3")
+
+[node name="KeyboardSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_mj8sr")
+
+[node name="BoxBackground" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("GradientTexture1D_7rsu8")
+expand_mode = 1
+
+[node name="TopBar" type="TextureRect" parent="BoxBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 21.0
+offset_right = -18.0
+offset_bottom = -746.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_d5c62")
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxBackground/TopBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxBackground/TopBar/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Seperator3" type="Control" parent="BoxBackground/TopBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="BoxBackground/TopBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BoxBackground/TopBar/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_font_sizes/font_size = 130
+text = "Calculator
+"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 157.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BoxBackground/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxBackground/MarginContainer/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Seperator" type="Control" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AddCourseButton" type="Button" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_font_sizes/font_size = 65
+text = "ADD COURSE"
+
+[node name="Class1" type="MarginContainer" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class1"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_urnqw")
+theme_override_constants/separation = 10
+
+[node name="CourseEdit" type="LineEdit" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class1/HBoxContainer"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+placeholder_text = "COURSE NAME"
+alignment = 1
+
+[node name="Control" type="Control" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Grade" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class1/HBoxContainer/Control" instance=ExtResource("4_q5hry")]
+layout_mode = 2
+offset_left = 10.0
+offset_right = 253.0
+offset_bottom = 82.0
+
+[node name="Credits" type="LineEdit" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+placeholder_text = "CREDITS"
+alignment = 1
+
+[node name="ClassType" type="OptionButton" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_fonts/font = ExtResource("1_tbln0")
+theme_override_font_sizes/font_size = 80
+alignment = 1
+item_count = 4
+selected = 0
+popup/item_0/text = "Regular"
+popup/item_0/id = 0
+popup/item_1/text = "Honors"
+popup/item_1/id = 1
+popup/item_2/text = "AP"
+popup/item_2/id = 2
+popup/item_3/text = "College"
+popup/item_3/id = 3
+
+[node name="Class2" type="MarginContainer" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_urnqw")
+theme_override_constants/separation = 10
+
+[node name="CourseEdit" type="LineEdit" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class2/HBoxContainer"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+placeholder_text = "COURSE NAME"
+alignment = 1
+
+[node name="Control" type="Control" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Grade" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class2/HBoxContainer/Control" instance=ExtResource("4_q5hry")]
+layout_mode = 2
+offset_left = 10.0
+offset_right = 253.0
+offset_bottom = 82.0
+
+[node name="Credits" type="LineEdit" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+placeholder_text = "CREDITS"
+alignment = 1
+
+[node name="ClassType" type="OptionButton" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_fonts/font = ExtResource("1_tbln0")
+theme_override_font_sizes/font_size = 80
+alignment = 1
+item_count = 4
+selected = 0
+popup/item_0/text = "Regular"
+popup/item_0/id = 0
+popup/item_1/text = "Honors"
+popup/item_1/id = 1
+popup/item_2/text = "AP"
+popup/item_2/id = 2
+popup/item_3/text = "College"
+popup/item_3/id = 3
+
+[node name="Class3" type="MarginContainer" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class3"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_urnqw")
+theme_override_constants/separation = 10
+
+[node name="CourseEdit" type="LineEdit" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class3/HBoxContainer"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+placeholder_text = "COURSE NAME"
+alignment = 1
+
+[node name="Control" type="Control" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Grade" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class3/HBoxContainer/Control" instance=ExtResource("4_q5hry")]
+layout_mode = 2
+offset_left = 10.0
+offset_right = 253.0
+offset_bottom = 82.0
+
+[node name="Credits" type="LineEdit" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+placeholder_text = "CREDITS"
+alignment = 1
+
+[node name="ClassType" type="OptionButton" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_fonts/font = ExtResource("1_tbln0")
+theme_override_font_sizes/font_size = 80
+alignment = 1
+item_count = 4
+selected = 0
+popup/item_0/text = "Regular"
+popup/item_0/id = 0
+popup/item_1/text = "Honors"
+popup/item_1/id = 1
+popup/item_2/text = "AP"
+popup/item_2/id = 2
+popup/item_3/text = "College"
+popup/item_3/id = 3
+
+[node name="Class4" type="MarginContainer" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class4"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_urnqw")
+theme_override_constants/separation = 10
+
+[node name="CourseEdit" type="LineEdit" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class4/HBoxContainer"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+placeholder_text = "COURSE NAME"
+alignment = 1
+
+[node name="Control" type="Control" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Grade" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class4/HBoxContainer/Control" instance=ExtResource("4_q5hry")]
+layout_mode = 2
+offset_left = 10.0
+offset_right = 253.0
+offset_bottom = 82.0
+
+[node name="Credits" type="LineEdit" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+placeholder_text = "CREDITS"
+alignment = 1
+
+[node name="ClassType" type="OptionButton" parent="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ocxx3")
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_fonts/font = ExtResource("1_tbln0")
+theme_override_font_sizes/font_size = 80
+alignment = 1
+item_count = 4
+selected = 0
+popup/item_0/text = "Regular"
+popup/item_0/id = 0
+popup/item_1/text = "Honors"
+popup/item_1/id = 1
+popup/item_2/text = "AP"
+popup/item_2/id = 2
+popup/item_3/text = "College"
+popup/item_3/id = 3
+
+[node name="BottomBar" type="TextureRect" parent="BoxBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 711.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_d5c62")
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxBackground/BottomBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxBackground/BottomBar/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Seperator3" type="Control" parent="BoxBackground/BottomBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="DebugLabel" type="Label" parent="BoxBackground/BottomBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_font_sizes/font_size = 55
+vertical_alignment = 1
+
+[node name="Seperator4" type="Control" parent="BoxBackground/BottomBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="BlipSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ljjvm")
+
+[connection signal="button_up" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/AddCourseButton" to="." method="_on_add_course_button_button_up"]
+[connection signal="text_changed" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class1/HBoxContainer/CourseEdit" to="." method="_on_course_edit_text_changed"]
+[connection signal="item_selected" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class1/HBoxContainer/Control/Grade" to="." method="_on_grade_item_selected"]
+[connection signal="text_changed" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class1/HBoxContainer/Credits" to="." method="_on_credits_text_changed"]
+[connection signal="item_selected" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class1/HBoxContainer/ClassType" to="." method="_on_class_type_item_selected"]
+[connection signal="text_changed" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class2/HBoxContainer/CourseEdit" to="." method="_on_course_edit_text_changed"]
+[connection signal="item_selected" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class2/HBoxContainer/Control/Grade" to="." method="_on_grade_item_selected"]
+[connection signal="text_changed" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class2/HBoxContainer/Credits" to="." method="_on_credits_text_changed"]
+[connection signal="item_selected" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class2/HBoxContainer/ClassType" to="." method="_on_class_type_item_selected"]
+[connection signal="text_changed" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class3/HBoxContainer/CourseEdit" to="." method="_on_course_edit_text_changed"]
+[connection signal="item_selected" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class3/HBoxContainer/Control/Grade" to="." method="_on_grade_item_selected"]
+[connection signal="text_changed" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class3/HBoxContainer/Credits" to="." method="_on_credits_text_changed"]
+[connection signal="item_selected" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class3/HBoxContainer/ClassType" to="." method="_on_class_type_item_selected"]
+[connection signal="text_changed" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class4/HBoxContainer/CourseEdit" to="." method="_on_course_edit_text_changed"]
+[connection signal="item_selected" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class4/HBoxContainer/Control/Grade" to="." method="_on_grade_item_selected"]
+[connection signal="text_changed" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class4/HBoxContainer/Credits" to="." method="_on_credits_text_changed"]
+[connection signal="item_selected" from="BoxBackground/MarginContainer/ScrollContainer/VBoxContainer/Class4/HBoxContainer/ClassType" to="." method="_on_class_type_item_selected"]

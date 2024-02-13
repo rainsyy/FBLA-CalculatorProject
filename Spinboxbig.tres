@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://d22iv5sn8osk2"]
+
+[resource]
+LineEdit/colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+LineEdit/font_sizes/font_size = 55

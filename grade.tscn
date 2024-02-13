@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4x2d8jxwdrij"]
+
+[ext_resource type="Theme" uid="uid://d22iv5sn8osk2" path="res://Spinboxbig.tres" id="1_12kl7"]
+
+[node name="Grade" type="SpinBox"]
+offset_right = 265.0
+offset_bottom = 83.0
+size_flags_horizontal = 3
+theme = ExtResource("1_12kl7")
+prefix = "grade"

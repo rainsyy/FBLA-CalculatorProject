@@ -1,0 +1,378 @@
+[gd_scene load_steps=21 format=3 uid="uid://dlbrc7fc0ylay"]
+
+[ext_resource type="Script" path="res://Calculator.gd" id="1_cd3l3"]
+[ext_resource type="FontFile" uid="uid://doi4hghhxubdv" path="res://Assets/ThaleahFat.ttf" id="2_bxmw5"]
+[ext_resource type="AudioStream" uid="uid://cyiwlwyr8f42y" path="res://Sounds/menuClickAlt.wav" id="3_nsf2h"]
+[ext_resource type="Theme" uid="uid://homyfjxyl8r2" path="res://Calculator.tres" id="3_opwmv"]
+[ext_resource type="Theme" uid="uid://b5vrxcqv1odvk" path="res://Spinbox.tres" id="6_a0hu5"]
+[ext_resource type="Texture2D" uid="uid://730alrn4sot" path="res://Assets/SpriteOn.png" id="6_hgrsd"]
+[ext_resource type="PackedScene" uid="uid://bas70b5o2mvjf" path="res://Assets/Semester_1.tscn" id="6_lg4j4"]
+[ext_resource type="Texture2D" uid="uid://b2sao3i3fp07f" path="res://Assets/SpriteOff.png" id="7_anasx"]
+[ext_resource type="AudioStream" uid="uid://dm0gjex01cstv" path="res://Sounds/CalculateGPA.wav" id="9_cpb8i"]
+[ext_resource type="AudioStream" uid="uid://dwlyix2opmlcn" path="res://Sounds/TabChange.wav" id="10_iwwp7"]
+[ext_resource type="AudioStream" uid="uid://bbl01eqqajw13" path="res://Sounds/TabAdd.wav" id="11_fns32"]
+[ext_resource type="AudioStream" uid="uid://cs22lcm17db3s" path="res://Sounds/Slider.wav" id="12_v18db"]
+[ext_resource type="AudioStream" uid="uid://laah07erlemm" path="res://Sounds/SliderOff.wav" id="13_ofik6"]
+
+[sub_resource type="Gradient" id="Gradient_6xqks"]
+colors = PackedColorArray(0.184314, 0.207843, 0.27451, 1, 0.184314, 0.207843, 0.27451, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_msrvs"]
+gradient = SubResource("Gradient_6xqks")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l532d"]
+bg_color = Color(0.321569, 0.47451, 0.435294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp4qe"]
+bg_color = Color(0.517647, 0.662745, 0.54902, 1)
+
+[sub_resource type="Theme" id="Theme_nufgu"]
+ProgressBar/font_sizes/font_size = 45
+ProgressBar/styles/background = SubResource("StyleBoxFlat_l532d")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_rp4qe")
+
+[sub_resource type="Theme" id="Theme_ogivt"]
+CheckButton/colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+CheckButton/constants/check_v_offset = 0
+CheckButton/constants/h_separation = 25
+CheckButton/font_sizes/font_size = 60
+CheckButton/icons/checked = ExtResource("6_hgrsd")
+CheckButton/icons/unchecked = ExtResource("7_anasx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fljw8"]
+bg_color = Color(0.517647, 0.662745, 0.54902, 1)
+
+[node name="Calculator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cd3l3")
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -25
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2386.0
+offset_top = -831.0
+offset_right = 1667.0
+offset_bottom = 725.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_msrvs")
+metadata/_edit_lock_ = true
+
+[node name="MenuSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nsf2h")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 35.0
+offset_top = 35.0
+offset_right = 1894.0
+offset_bottom = 995.0
+theme_override_constants/separation = 100
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TabContainer" type="TabContainer" parent="HBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_opwmv")
+theme_override_fonts/font = ExtResource("2_bxmw5")
+theme_override_font_sizes/font_size = 60
+drag_to_rearrange_enabled = true
+
+[node name="Semester 1" parent="HBoxContainer/ScrollContainer/TabContainer" instance=ExtResource("6_lg4j4")]
+layout_mode = 2
+
+[node name="Semester 2" parent="HBoxContainer/ScrollContainer/TabContainer" instance=ExtResource("6_lg4j4")]
+visible = false
+layout_mode = 2
+
+[node name="Seperator8" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator9" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator10" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SettingsContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.759346
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="SettingsContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_font_sizes/font_size = 70
+text = "Cummulative
+GPA SCORE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackGround" type="ColorRect" parent="SettingsContainer/VBoxContainer/MarginContainer/VBoxContainer/Label"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0.517647, 0.662745, 0.54902, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="SettingsContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_nufgu")
+max_value = 4.0
+
+[node name="GpaContainer" type="MarginContainer" parent="SettingsContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+
+[node name="GpaLabel" type="Label" parent="SettingsContainer/VBoxContainer/GpaContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_colors/font_shadow_color = Color(0.184314, 0.207843, 0.27451, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 9
+theme_override_font_sizes/font_size = 100
+text = "0.0 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackGround" type="ColorRect" parent="SettingsContainer/VBoxContainer/GpaContainer/GpaLabel"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0.321569, 0.47451, 0.435294, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="SettingsContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_font_sizes/font_size = 60
+text = "Weighted"
+
+[node name="WeightedCheck" type="CheckButton" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+z_index = 1
+layout_mode = 2
+theme = SubResource("Theme_ogivt")
+button_pressed = true
+text = "
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_font_sizes/font_size = 60
+text = "lETTER"
+
+[node name="LetterCheck" type="CheckButton" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2"]
+z_index = 1
+layout_mode = 2
+theme = SubResource("Theme_ogivt")
+button_pressed = true
+text = "
+ "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_font_sizes/font_size = 60
+text = "currenT GPA "
+
+[node name="Label2" type="Label" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_font_sizes/font_size = 35
+text = "(optional)"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="gpaSpinBox" type="SpinBox" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_a0hu5")
+max_value = 4.0
+step = 0.01
+prefix = "GPA"
+
+[node name="creditsSpinBox" type="SpinBox" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_a0hu5")
+step = 0.1
+prefix = "credits"
+
+[node name="AddSemesterButton" type="Button" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_fljw8")
+text = "ADD SEMESTER"
+
+[node name="CalculateButton" type="Button" parent="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.792157, 0.823529, 0.772549, 1)
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_fljw8")
+text = "CALCULATE"
+
+[node name="MarginContainer3" type="MarginContainer" parent="SettingsContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+size_flags_vertical = 10
+mouse_filter = 2
+
+[node name="BottomBarColor" type="ColorRect" parent="SettingsContainer/VBoxContainer/MarginContainer3"]
+z_index = 1
+layout_mode = 2
+color = Color(0.321569, 0.47451, 0.435294, 1)
+
+[node name="BackGround" type="ColorRect" parent="SettingsContainer"]
+z_index = -1
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0.207843, 0.309804, 0.321569, 1)
+
+[node name="BackButton2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -269.0
+offset_top = -20.0
+offset_bottom = 74.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 75
+
+[node name="BackButton" type="Button" parent="BackButton2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[node name="CalculateSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_cpb8i")
+
+[node name="SwitchTabSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_iwwp7")
+
+[node name="AddSemesterSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_fns32")
+
+[node name="TabAddSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_cpb8i")
+
+[node name="SliderOnSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_v18db")
+
+[node name="SliderOffSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_ofik6")
+
+[connection signal="tab_changed" from="HBoxContainer/ScrollContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="toggled" from="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/WeightedCheck" to="." method="_on_weighted_check_toggled"]
+[connection signal="toggled" from="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2/LetterCheck" to="." method="_on_letter_check_toggled"]
+[connection signal="value_changed" from="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer4/gpaSpinBox" to="." method="_on_gpa_spin_box_value_changed"]
+[connection signal="value_changed" from="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer4/creditsSpinBox" to="." method="_on_credits_spin_box_value_changed"]
+[connection signal="button_up" from="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/AddSemesterButton" to="." method="_on_add_semester_button_button_up"]
+[connection signal="button_up" from="SettingsContainer/VBoxContainer/MarginContainer2/VBoxContainer/CalculateButton" to="." method="_on_calculate_button_button_up"]
+[connection signal="button_up" from="BackButton2/BackButton" to="." method="_on_back_button_button_up"]
